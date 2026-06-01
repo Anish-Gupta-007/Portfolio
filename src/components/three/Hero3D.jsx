@@ -10,8 +10,20 @@ function LuxuryObject() {
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.1;
-      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.15;
+      // 1. Calculate scroll position
+      const scrollY = window.scrollY;
+      const scrollIntensity = scrollY / 800; // Normalizes scroll distance
+
+      // 2. Crazy "Blast" Rotation: Speeds up massively as you scroll
+      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.1 + (scrollIntensity * 4);
+      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.15 + (scrollIntensity * 6);
+
+      // 3. Crazy "Blast" Scale: The wireframe expands exponentially to simulate flying through it
+      // Starts at 1.2, grows massive as you scroll down
+      const targetScale = 1.2 + (scrollIntensity * 12);
+      
+      // Lerp for buttery smooth scaling even during fast scrolls
+      meshRef.current.scale.lerp({ x: targetScale, y: targetScale, z: targetScale }, 0.05);
     }
   });
 
@@ -32,7 +44,7 @@ function LuxuryObject() {
 
 export default function Hero3D() {
   return (
-    <div className="absolute inset-0 -z-10 h-full w-full bg-primary overflow-hidden">
+    <div className="fixed inset-0 -z-50 h-[100vh] w-[100vw] bg-primary overflow-hidden pointer-events-none">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.05)_0%,rgba(0,0,0,1)_70%)] z-0 pointer-events-none" />
       
       {/* Performance fix: Add dpr={[1, 1.5]} to prevent massive pixel pushing on high-res Retina/4K screens */}

@@ -38,7 +38,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative min-h-screen w-full py-24 px-8 md:px-24 bg-primary flex flex-col justify-center overflow-hidden">
+    <section id="contact" className="relative min-h-screen w-full py-16 md:py-24 px-4 sm:px-8 md:px-16 lg:px-24 bg-primary flex flex-col justify-center overflow-hidden">
       
       <div className="mb-16 flex flex-col gap-4 text-center items-center">
         <h2 className="text-accent-gold uppercase tracking-[0.3em] text-sm md:text-base font-semibold">

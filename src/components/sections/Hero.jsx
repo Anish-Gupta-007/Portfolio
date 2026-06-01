@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Hero3D from "../three/Hero3D";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -31,9 +30,6 @@ export default function Hero() {
       ref={containerRef} 
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* 3D Background */}
-      <Hero3D />
-
       {/* Foreground UI Overlay */}
       <div 
         ref={textRef} 
@@ -46,25 +42,31 @@ export default function Hero() {
           </span>
         </div>
         
-        <h1 className="font-display text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] tracking-tighter mb-8 mix-blend-screen text-white">
+        <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] font-bold leading-[1.1] tracking-tight mb-8 mix-blend-screen text-white">
           HI, I'M <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-gold via-accent-blue to-accent-purple italic font-light">ANISH</span>
         </h1>
         
-        <p className="text-text-muted text-lg md:text-2xl max-w-2xl mb-12 font-light leading-relaxed">
+        <p className="text-text-muted text-base sm:text-lg md:text-xl max-w-2xl mb-12 font-light leading-loose px-4 sm:px-0">
           I am a Software Developer. I specialize in building modern, interactive, and high-performance web applications with a focus on clean design.
         </p>
         
         {/* Buttons need pointer-events-auto because parent is pointer-events-none */}
-        <div className="flex gap-4 md:gap-6 pointer-events-auto flex-wrap justify-center">
-          <a href="#projects" className="bg-white text-black px-8 md:px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm hover:scale-105 transition-transform duration-300">
+        <div className="flex flex-col sm:flex-row w-full max-w-xs sm:max-w-none gap-4 md:gap-6 pointer-events-auto justify-center mx-auto mt-4">
+          
+          <a href="#projects" className="w-full sm:w-auto bg-white text-black px-8 md:px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm hover:scale-105 transition-transform duration-300 flex items-center justify-center">
             View Projects
           </a>
-          <a href="https://drive.google.com/file/d/11tQ5tSxMfFdeskaVdkLUj1cz6NG28SmN/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="glass text-white px-8 md:px-10 py-4 rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs md:text-sm hover:border-accent-gold hover:bg-white/5 transition-all duration-300">
-            Resume
-          </a>
-          <a href="#contact" className="glass text-white px-8 md:px-10 py-4 rounded-full border border-white/20 font-bold uppercase tracking-widest text-xs md:text-sm hover:border-accent-blue hover:bg-white/5 transition-all duration-300">
-            Contact
-          </a>
+          
+          <div className="flex w-full sm:w-auto gap-4 md:gap-6">
+            <a href="https://drive.google.com/file/d/11tQ5tSxMfFdeskaVdkLUj1cz6NG28SmN/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none glass text-white px-2 sm:px-8 md:px-10 py-4 rounded-full border border-white/20 font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm hover:border-accent-gold hover:bg-white/5 transition-all duration-300 flex items-center justify-center">
+              Resume
+            </a>
+            
+            <a href="#contact" className="flex-1 sm:flex-none glass text-white px-2 sm:px-8 md:px-10 py-4 rounded-full border border-white/20 font-bold uppercase tracking-widest text-[10px] sm:text-xs md:text-sm hover:border-accent-blue hover:bg-white/5 transition-all duration-300 flex items-center justify-center">
+              Contact
+            </a>
+          </div>
+
         </div>
       </div>
 

@@ -29,7 +29,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative min-h-screen w-full py-24 px-8 md:px-24 bg-primary flex flex-col justify-center overflow-hidden">
+    <section id="experience" className="relative min-h-screen w-full py-16 md:py-24 px-4 sm:px-8 md:px-16 lg:px-24 bg-primary flex flex-col justify-center overflow-hidden">
       
       <div className="mb-24 flex flex-col gap-4 text-center items-center">
         <h2 className="text-accent-gold uppercase tracking-[0.3em] text-sm md:text-base font-semibold">
@@ -90,8 +90,6 @@ export default function Experience() {
 
 // Reusable animated card component for the timeline
 function ExperienceCard({ exp, direction }) {
-  // If direction is 'right', the card slides in from the left (x: -50)
-  // If direction is 'left', it slides in from the right (x: 50)
   const initialX = direction === "right" ? -50 : 50;
 
   return (

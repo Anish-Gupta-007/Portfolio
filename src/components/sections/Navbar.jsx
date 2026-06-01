@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav 
       ref={navRef} 
-      className="fixed top-0 left-0 w-full z-50 px-8 py-6 flex justify-between items-center"
+      className="fixed top-0 left-0 w-full z-50 px-4 sm:px-8 md:px-16 lg:px-24 py-6 flex justify-between items-center"
     >
       {/* Logo */}
       <div className="font-display font-bold text-2xl tracking-tighter cursor-pointer">

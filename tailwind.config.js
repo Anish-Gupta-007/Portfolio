@@ -30,8 +30,8 @@ module.exports = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ["var(--font-satoshi)", "var(--font-inter)", "sans-serif"],
-        display: ["var(--font-space-grotesk)", "sans-serif"],
+        sans: ["var(--font-outfit)", "sans-serif"],
+        display: ["var(--font-syne)", "sans-serif"],
       },
     },
   },
